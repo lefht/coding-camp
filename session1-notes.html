@@ -1,0 +1,235 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.section{margin-bottom:2.5rem}
+.sec-label{font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px;display:inline-block;margin-bottom:10px;font-family:var(--font-sans)}
+.caption{font-size:12px;color:var(--color-text-secondary);font-family:var(--font-sans);margin-top:8px;line-height:1.5}
+.code{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:12px 14px;font-family:var(--font-mono);font-size:13px;line-height:1.8;color:var(--color-text-primary);white-space:pre;overflow-x:auto;margin-bottom:10px}
+.kw{color:#9333ea;font-weight:500}.str{color:#16a34a}.num{color:#2563eb}.fn{color:#d97706}.cmt{color:#9ca3af;font-style:italic}.var{color:#0891b2}
+svg{display:block;width:100%}
+</style>
+
+<div style="padding:1rem 0">
+
+<!-- 1. print() -->
+<div class="section">
+  <div class="sec-label" style="background:#EEEDFE;color:#3C3489">1 — print()</div>
+  <div class="code"><span class="fn">print</span>(<span class="str">"Hello, world!"</span>)
+<span class="fn">print</span>(<span class="str">"I am"</span>, <span class="num">10</span>, <span class="str">"years old"</span>)</div>
+  <svg viewBox="0 0 680 130" role="img"><title>print() visual</title><desc>print() sends a message from your code to the screen</desc>
+    <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <!-- Code box -->
+    <g class="c-purple">
+      <rect x="40" y="30" width="180" height="70" rx="8" stroke-width="0.5"/>
+      <text class="th" x="130" y="58" text-anchor="middle" dominant-baseline="central">print("Hello!")</text>
+      <text class="ts" x="130" y="82" text-anchor="middle" dominant-baseline="central">your code</text>
+    </g>
+    <!-- Arrow -->
+    <line x1="222" y1="65" x2="318" y2="65" class="arr" marker-end="url(#a1)" stroke="#9333ea"/>
+    <text class="ts" x="270" y="56" text-anchor="middle">runs</text>
+    <!-- Screen box -->
+    <g class="c-teal">
+      <rect x="320" y="20" width="200" height="90" rx="10" stroke-width="0.5"/>
+      <text class="th" x="420" y="50" text-anchor="middle" dominant-baseline="central">Screen</text>
+      <rect x="340" y="64" width="160" height="32" rx="6" fill="none" stroke-width="0.5"/>
+      <text class="ts" x="420" y="83" text-anchor="middle" dominant-baseline="central">Hello!</text>
+    </g>
+    <!-- Label -->
+    <text class="ts" x="560" y="68" dominant-baseline="central">output appears here</text>
+  </svg>
+  <p class="caption">Think of print() as your code talking out loud. The text appears instantly in the output window.</p>
+</div>
+
+<!-- 2. Variables -->
+<div class="section">
+  <div class="sec-label" style="background:#E1F5EE;color:#085041">2 — variables</div>
+  <div class="code"><span class="var">name</span> = <span class="str">"Sofia"</span>
+<span class="var">age</span>  = <span class="num">11</span>
+<span class="var">favourite_colour</span> = <span class="str">"blue"</span></div>
+  <svg viewBox="0 0 680 160" role="img"><title>Variables as labelled boxes</title><desc>Each variable is like a labelled sticky-note box holding a value</desc>
+    <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <!-- Box 1: name -->
+    <g class="c-teal">
+      <rect x="30" y="30" width="160" height="90" rx="10" stroke-width="0.5"/>
+      <text class="ts"  x="110" y="54"  text-anchor="middle" dominant-baseline="central">label</text>
+      <rect x="42" y="64" width="136" height="44" rx="6" fill="none" stroke-width="0.5"/>
+      <text class="th" x="110" y="90" text-anchor="middle" dominant-baseline="central">name</text>
+    </g>
+    <!-- value tag -->
+    <g class="c-green"><rect x="56" y="22" width="108" height="24" rx="12" stroke-width="0.5"/>
+    <text class="ts" x="110" y="34" text-anchor="middle" dominant-baseline="central">"Sofia"</text></g>
+    <line x1="110" y1="46" x2="110" y2="62" stroke="#1D9E75" stroke-width="1" marker-end="url(#a2)"/>
+
+    <!-- Box 2: age -->
+    <g class="c-purple">
+      <rect x="220" y="30" width="160" height="90" rx="10" stroke-width="0.5"/>
+      <text class="ts"  x="300" y="54"  text-anchor="middle" dominant-baseline="central">label</text>
+      <rect x="232" y="64" width="136" height="44" rx="6" fill="none" stroke-width="0.5"/>
+      <text class="th" x="300" y="90" text-anchor="middle" dominant-baseline="central">age</text>
+    </g>
+    <g class="c-blue"><rect x="246" y="22" width="108" height="24" rx="12" stroke-width="0.5"/>
+    <text class="ts" x="300" y="34" text-anchor="middle" dominant-baseline="central">11</text></g>
+    <line x1="300" y1="46" x2="300" y2="62" stroke="#534AB7" stroke-width="1" marker-end="url(#a2)"/>
+
+    <!-- Box 3: colour -->
+    <g class="c-coral">
+      <rect x="410" y="30" width="230" height="90" rx="10" stroke-width="0.5"/>
+      <text class="ts"  x="525" y="54"  text-anchor="middle" dominant-baseline="central">label</text>
+      <rect x="422" y="64" width="206" height="44" rx="6" fill="none" stroke-width="0.5"/>
+      <text class="th" x="525" y="90" text-anchor="middle" dominant-baseline="central">favourite_colour</text>
+    </g>
+    <g class="c-amber"><rect x="446" y="22" width="158" height="24" rx="12" stroke-width="0.5"/>
+    <text class="ts" x="525" y="34" text-anchor="middle" dominant-baseline="central">"blue"</text></g>
+    <line x1="525" y1="46" x2="525" y2="62" stroke="#993C1D" stroke-width="1" marker-end="url(#a2)"/>
+
+    <text class="ts" x="340" y="148" text-anchor="middle">each box holds one value — you can change it any time</text>
+  </svg>
+  <p class="caption">A variable is like a sticky-note box. The label on the front is the name; the value inside is what Python stores.</p>
+</div>
+
+<!-- 3. Data types -->
+<div class="section">
+  <div class="sec-label" style="background:#FAEEDA;color:#633806">3 — data types</div>
+  <div class="code"><span class="var">player_name</span> = <span class="str">"Kai"</span>       <span class="cmt"># str</span>
+<span class="var">score</span>       = <span class="num">150</span>           <span class="cmt"># int</span>
+<span class="var">speed</span>       = <span class="num">4.5</span>           <span class="cmt"># float</span>
+<span class="var">game_over</span>   = <span class="kw">False</span>         <span class="cmt"># bool</span></div>
+  <svg viewBox="0 0 680 150" role="img"><title>The four main data types</title><desc>str holds text, int holds whole numbers, float holds decimals, bool holds True or False</desc>
+    <!-- str -->
+    <g class="c-green">
+      <rect x="20" y="20" width="148" height="110" rx="10" stroke-width="0.5"/>
+      <text class="th" x="94" y="54"  text-anchor="middle" dominant-baseline="central">str</text>
+      <text class="ts" x="94" y="78"  text-anchor="middle" dominant-baseline="central">"hello"</text>
+      <text class="ts" x="94" y="98"  text-anchor="middle" dominant-baseline="central">"any text"</text>
+      <text class="ts" x="94" y="118" text-anchor="middle" dominant-baseline="central">needs quotes</text>
+    </g>
+    <!-- int -->
+    <g class="c-blue">
+      <rect x="188" y="20" width="148" height="110" rx="10" stroke-width="0.5"/>
+      <text class="th" x="262" y="54"  text-anchor="middle" dominant-baseline="central">int</text>
+      <text class="ts" x="262" y="78"  text-anchor="middle" dominant-baseline="central">5   -3   1000</text>
+      <text class="ts" x="262" y="98"  text-anchor="middle" dominant-baseline="central">whole numbers</text>
+      <text class="ts" x="262" y="118" text-anchor="middle" dominant-baseline="central">no quotes</text>
+    </g>
+    <!-- float -->
+    <g class="c-amber">
+      <rect x="356" y="20" width="148" height="110" rx="10" stroke-width="0.5"/>
+      <text class="th" x="430" y="54"  text-anchor="middle" dominant-baseline="central">float</text>
+      <text class="ts" x="430" y="78"  text-anchor="middle" dominant-baseline="central">3.14   9.5</text>
+      <text class="ts" x="430" y="98"  text-anchor="middle" dominant-baseline="central">decimals</text>
+      <text class="ts" x="430" y="118" text-anchor="middle" dominant-baseline="central">no quotes</text>
+    </g>
+    <!-- bool -->
+    <g class="c-purple">
+      <rect x="524" y="20" width="136" height="110" rx="10" stroke-width="0.5"/>
+      <text class="th" x="592" y="54"  text-anchor="middle" dominant-baseline="central">bool</text>
+      <text class="ts" x="592" y="78"  text-anchor="middle" dominant-baseline="central">True</text>
+      <text class="ts" x="592" y="98"  text-anchor="middle" dominant-baseline="central">False</text>
+      <text class="ts" x="592" y="118" text-anchor="middle" dominant-baseline="central">only 2 options!</text>
+    </g>
+  </svg>
+  <p class="caption">Each type has its own purpose. Strings need quotes; numbers and booleans never do. Mixing them without converting causes an error!</p>
+</div>
+
+<!-- 4. input() -->
+<div class="section">
+  <div class="sec-label" style="background:#FAECE7;color:#712B13">4 — input()</div>
+  <div class="code"><span class="var">name</span> = <span class="fn">input</span>(<span class="str">"What is your name? "</span>)
+<span class="fn">print</span>(<span class="str">"Hello,"</span>, <span class="var">name</span>)</div>
+  <svg viewBox="0 0 680 150" role="img"><title>How input() works</title><desc>The program asks a question, the user types an answer, Python saves it in a variable</desc>
+    <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <!-- Step 1: program asks -->
+    <g class="c-purple">
+      <rect x="20" y="30" width="150" height="70" rx="8" stroke-width="0.5"/>
+      <text class="th" x="95" y="58" text-anchor="middle" dominant-baseline="central">program asks</text>
+      <text class="ts" x="95" y="80" text-anchor="middle" dominant-baseline="central">"What is your name?"</text>
+    </g>
+
+    <line x1="172" y1="65" x2="238" y2="65" class="arr" marker-end="url(#a3)" stroke="#7F77DD"/>
+
+    <!-- Step 2: user types -->
+    <g class="c-teal">
+      <rect x="240" y="30" width="130" height="70" rx="8" stroke-width="0.5"/>
+      <text class="th" x="305" y="54" text-anchor="middle" dominant-baseline="central">user types</text>
+      <rect x="256" y="66" width="98" height="24" rx="6" fill="none" stroke-width="0.5"/>
+      <text class="ts" x="305" y="79" text-anchor="middle" dominant-baseline="central">Mia_</text>
+    </g>
+
+    <line x1="372" y1="65" x2="438" y2="65" class="arr" marker-end="url(#a3)" stroke="#1D9E75"/>
+
+    <!-- Step 3: Python saves it -->
+    <g class="c-coral">
+      <rect x="440" y="30" width="210" height="70" rx="8" stroke-width="0.5"/>
+      <text class="th" x="545" y="54" text-anchor="middle" dominant-baseline="central">saved as a variable</text>
+      <text class="ts" x="545" y="78" text-anchor="middle" dominant-baseline="central">name = "Mia"  (always a str!)</text>
+    </g>
+
+    <!-- Step numbers -->
+    <circle cx="95"  cy="118" r="10" fill="#EEEDFE"/><text class="ts" x="95"  y="118" text-anchor="middle" dominant-baseline="central" style="fill:#3C3489">1</text>
+    <circle cx="305" cy="118" r="10" fill="#E1F5EE"/><text class="ts" x="305" y="118" text-anchor="middle" dominant-baseline="central" style="fill:#085041">2</text>
+    <circle cx="545" cy="118" r="10" fill="#FAECE7"/><text class="ts" x="545" y="118" text-anchor="middle" dominant-baseline="central" style="fill:#712B13">3</text>
+  </svg>
+  <p class="caption">input() always hands back a string — even if the user types a number! Use int() to convert it when you need to do maths.</p>
+</div>
+
+<!-- 5. if / else -->
+<div class="section">
+  <div class="sec-label" style="background:#FCEBEB;color:#791F1F">5 — if / else</div>
+  <div class="code"><span class="var">score</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Enter your score: "</span>))
+
+<span class="kw">if</span> <span class="var">score</span> >= <span class="num">90</span>:
+    <span class="fn">print</span>(<span class="str">"Grade: A"</span>)
+<span class="kw">elif</span> <span class="var">score</span> >= <span class="num">70</span>:
+    <span class="fn">print</span>(<span class="str">"Grade: B"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">"Grade: C"</span>)</div>
+  <svg viewBox="0 0 680 290" role="img"><title>if/else flowchart</title><desc>A flowchart showing how Python checks conditions and takes different paths</desc>
+    <defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <!-- Start: score -->
+    <g class="c-gray">
+      <rect x="265" y="10" width="150" height="40" rx="8" stroke-width="0.5"/>
+      <text class="th" x="340" y="30" text-anchor="middle" dominant-baseline="central">score = 85</text>
+    </g>
+    <line x1="340" y1="50" x2="340" y2="74" stroke="#888780" stroke-width="1" marker-end="url(#a4)"/>
+
+    <!-- Diamond 1 -->
+    <polygon points="340,76 430,116 340,156 250,116" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+    <text class="ts" x="340" y="112" text-anchor="middle" dominant-baseline="central">score</text>
+    <text class="ts" x="340" y="128" text-anchor="middle" dominant-baseline="central">>= 90?</text>
+
+    <!-- Yes branch -->
+    <line x1="430" y1="116" x2="560" y2="116" stroke="#534AB7" stroke-width="1" marker-end="url(#a4)"/>
+    <text class="ts" x="490" y="108" text-anchor="middle">yes</text>
+    <g class="c-purple"><rect x="562" y="96" width="100" height="40" rx="8" stroke-width="0.5"/>
+    <text class="th" x="612" y="116" text-anchor="middle" dominant-baseline="central">Grade: A</text></g>
+
+    <!-- No arrow down -->
+    <line x1="340" y1="156" x2="340" y2="184" stroke="#888780" stroke-width="1" marker-end="url(#a4)"/>
+    <text class="ts" x="352" y="172">no</text>
+
+    <!-- Diamond 2 -->
+    <polygon points="340,186 430,216 340,246 250,216" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+    <text class="ts" x="340" y="212" text-anchor="middle" dominant-baseline="central">score</text>
+    <text class="ts" x="340" y="228" text-anchor="middle" dominant-baseline="central">>= 70?</text>
+
+    <!-- Yes branch 2 -->
+    <line x1="430" y1="216" x2="560" y2="216" stroke="#0F6E56" stroke-width="1" marker-end="url(#a4)"/>
+    <text class="ts" x="490" y="208" text-anchor="middle">yes</text>
+    <g class="c-teal"><rect x="562" y="196" width="100" height="40" rx="8" stroke-width="0.5"/>
+    <text class="th" x="612" y="216" text-anchor="middle" dominant-baseline="central">Grade: B</text></g>
+
+    <!-- No arrow down -->
+    <line x1="340" y1="246" x2="340" y2="270" stroke="#888780" stroke-width="1" marker-end="url(#a4)"/>
+    <text class="ts" x="352" y="262">no</text>
+
+    <!-- else -->
+    <g class="c-coral"><rect x="275" y="272" width="130" height="14" rx="4" stroke-width="0.5"/>
+    <text class="ts" x="340" y="279" text-anchor="middle" dominant-baseline="central">Grade: C (else)</text></g>
+  </svg>
+  <p class="caption">Python checks conditions from top to bottom and takes the first one that is True. Once a branch runs, it skips the rest. Draw this on the board before showing the code — the flowchart makes the structure obvious.</p>
+</div>
+
+</div>
