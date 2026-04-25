@@ -1,19 +1,65 @@
-
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-.section{margin-bottom:2.5rem}
-.sec-label{font-size:11px;font-weight:500;padding:3px 10px;border-radius:8px;display:inline-block;margin-bottom:10px;font-family:var(--font-sans)}
-.caption{font-size:12px;color:var(--color-text-secondary);font-family:var(--font-sans);margin-top:8px;line-height:1.5}
-.code{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:12px 14px;font-family:var(--font-mono);font-size:13px;line-height:1.8;color:var(--color-text-primary);white-space:pre;overflow-x:auto;margin-bottom:10px}
-.kw{color:#9333ea;font-weight:500}.str{color:#16a34a}.num{color:#2563eb}.fn{color:#d97706}.cmt{color:#9ca3af;font-style:italic}.var{color:#0891b2}
-svg{display:block;width:100%}
+  :root {
+    --green: #1DB97A; --green-light: #D4F5E5; --green-dark: #0A6644;
+    --purple: #7C3AED; --purple-light: #EDE9FE;
+    --pink: #EC4899; --pink-light: #FCE7F3;
+    --orange: #F97316; --orange-light: #FFF0E5;
+    --blue: #3B82F6; --blue-light: #DBEAFE;
+    --yellow: #EAB308; --yellow-light: #FEF9C3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #F0FDF8; padding: 1.5rem; }
+
+  .notes-header { margin-bottom: 2rem; }
+  .notes-header h1 { font-family: 'Fredoka One', cursive; font-size: 36px; background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
+  .notes-header p { font-size: 14px; color: #6B7280; font-weight: 600; }
+  .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 13px; font-weight: 700; color: var(--purple); text-decoration: none; background: var(--purple-light); padding: 6px 14px; border-radius: 50px; }
+  .back-link:hover { text-decoration: underline; }
+
+  .section { background: #fff; border: 2px solid #E5E7EB; border-radius: 20px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .sec-label { font-family: 'Fredoka One', cursive; font-size: 15px; padding: 5px 14px; border-radius: 50px; display: inline-block; margin-bottom: 12px; }
+  .caption { font-size: 13px; color: #6B7280; font-family: 'Nunito', sans-serif; margin-top: 10px; line-height: 1.6; font-weight: 600; }
+  .code { background: #1E1B4B; border-radius: 14px; padding: 14px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.8; color: #C4B5FD; white-space: pre; overflow-x: auto; margin-bottom: 12px; }
+  .kw { color: #F472B6; font-weight: 700; }
+  .str { color: #86EFAC; }
+  .num { color: #93C5FD; }
+  .fn { color: #FCD34D; }
+  .cmt { color: #6B7280; font-style: italic; }
+  .var { color: #67E8F9; }
+  svg { display: block; width: 100%; }
+
+  /* SVG color classes */
+  .c-purple rect, .c-purple polygon { fill: #EDE9FE; stroke: #7C3AED; }
+  .c-purple text { fill: #5B21B6; }
+  .c-teal rect, .c-teal polygon { fill: #CCFBEF; stroke: #0F766E; }
+  .c-teal text { fill: #065F46; }
+  .c-green rect, .c-green polygon { fill: #D4F5E5; stroke: #1D9E75; }
+  .c-green text { fill: #085041; }
+  .c-coral rect, .c-coral polygon { fill: #FFE4E6; stroke: #F43F5E; }
+  .c-coral text { fill: #9F1239; }
+  .c-blue rect, .c-blue polygon { fill: #DBEAFE; stroke: #3B82F6; }
+  .c-blue text { fill: #1D4ED8; }
+  .c-amber rect, .c-amber polygon { fill: #FEF9C3; stroke: #CA8A04; }
+  .c-amber text { fill: #854D0E; }
+  .c-gray rect, .c-gray polygon { fill: #F3F4F6; stroke: #9CA3AF; }
+  .c-gray text { fill: #374151; }
+  .th { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; }
+  .ts { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 600; fill: #374151; }
+  .arr { stroke-width: 1.5; }
 </style>
 
-<div style="padding:1rem 0">
+<a class="back-link" href="index.html">← Back to Coding Camp</a>
+<div class="notes-header">
+  <h1>📓 Session 1 Notes</h1>
+  <p>Getting started — visuals &amp; examples</p>
+</div>
+
+<div style="padding:0">
 
 <!-- 1. print() -->
 <div class="section">
-  <div class="sec-label" style="background:#EEEDFE;color:#3C3489">1 — print()</div>
+  <div class="sec-label" style="background:#EDE9FE;color:#7C3AED">1 — print()</div>
   <div class="code"><span class="fn">print</span>(<span class="str">"Hello, world!"</span>)
 <span class="fn">print</span>(<span class="str">"I am"</span>, <span class="num">10</span>, <span class="str">"years old"</span>)</div>
   <svg viewBox="0 0 680 130" role="img"><title>print() visual</title><desc>print() sends a message from your code to the screen</desc>
@@ -42,7 +88,7 @@ svg{display:block;width:100%}
 
 <!-- 2. Variables -->
 <div class="section">
-  <div class="sec-label" style="background:#E1F5EE;color:#085041">2 — variables</div>
+  <div class="sec-label" style="background:#D4F5E5;color:#0A6644">2 — variables</div>
   <div class="code"><span class="var">name</span> = <span class="str">"Sofia"</span>
 <span class="var">age</span>  = <span class="num">11</span>
 <span class="var">favourite_colour</span> = <span class="str">"blue"</span></div>
@@ -90,7 +136,7 @@ svg{display:block;width:100%}
 
 <!-- 3. Data types -->
 <div class="section">
-  <div class="sec-label" style="background:#FAEEDA;color:#633806">3 — data types</div>
+  <div class="sec-label" style="background:#FEF9C3;color:#854D0E">3 — data types</div>
   <div class="code"><span class="var">player_name</span> = <span class="str">"Kai"</span>       <span class="cmt"># str</span>
 <span class="var">score</span>       = <span class="num">150</span>           <span class="cmt"># int</span>
 <span class="var">speed</span>       = <span class="num">4.5</span>           <span class="cmt"># float</span>
@@ -134,7 +180,7 @@ svg{display:block;width:100%}
 
 <!-- 4. input() -->
 <div class="section">
-  <div class="sec-label" style="background:#FAECE7;color:#712B13">4 — input()</div>
+  <div class="sec-label" style="background:#FFE4E6;color:#9F1239">4 — input()</div>
   <div class="code"><span class="var">name</span> = <span class="fn">input</span>(<span class="str">"What is your name? "</span>)
 <span class="fn">print</span>(<span class="str">"Hello,"</span>, <span class="var">name</span>)</div>
   <svg viewBox="0 0 680 150" role="img"><title>How input() works</title><desc>The program asks a question, the user types an answer, Python saves it in a variable</desc>
@@ -176,7 +222,7 @@ svg{display:block;width:100%}
 
 <!-- 5. if / else -->
 <div class="section">
-  <div class="sec-label" style="background:#FCEBEB;color:#791F1F">5 — if / else</div>
+  <div class="sec-label" style="background:#FCE7F3;color:#EC4899">5 — if / else</div>
   <div class="code"><span class="var">score</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Enter your score: "</span>))
 
 <span class="kw">if</span> <span class="var">score</span> >= <span class="num">90</span>:
