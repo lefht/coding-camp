@@ -1,0 +1,146 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1DB97A; --green-light: #D4F5E5; --green-dark: #0A6644;
+    --purple: #7C3AED; --purple-light: #EDE9FE;
+    --pink: #EC4899; --pink-light: #FCE7F3;
+    --orange: #F97316; --orange-light: #FFF0E5;
+    --blue: #3B82F6; --blue-light: #DBEAFE;
+    --yellow: #EAB308; --yellow-light: #FEF9C3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #F0FDF8; padding: 1.5rem; max-width: 780px; margin: 0 auto; }
+
+  .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 13px; font-weight: 700; color: var(--purple); text-decoration: none; background: var(--purple-light); padding: 6px 14px; border-radius: 50px; }
+  .back-link:hover { text-decoration: underline; }
+
+  .page-header { margin-bottom: 2rem; }
+  .page-header h1 { font-family: 'Fredoka One', cursive; font-size: 40px; background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+  .page-header p { font-size: 15px; color: #6B7280; font-weight: 600; }
+
+  .step-card { background: #fff; border: 2px solid #E5E7EB; border-radius: 20px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .step-badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 50px; padding: 6px 16px; font-family: 'Fredoka One', cursive; font-size: 16px; margin-bottom: 14px; }
+  .step-title { font-family: 'Fredoka One', cursive; font-size: 22px; color: #1F2937; margin-bottom: 8px; }
+  .step-desc { font-size: 14px; color: #374151; line-height: 1.8; margin-bottom: 14px; }
+
+  .instruction-list { list-style: none; padding: 0; margin-bottom: 14px; }
+  .instruction-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1.5px dashed #E5E7EB; font-size: 14px; color: #374151; line-height: 1.6; }
+  .instruction-list li:last-child { border-bottom: none; }
+  .step-num { background: var(--purple); color: #fff; font-weight: 800; font-size: 12px; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+
+  .tip-box { background: var(--yellow-light); border: 2px solid #FDE68A; border-radius: 14px; padding: 12px 16px; font-size: 13px; color: #78350F; font-weight: 600; line-height: 1.6; margin-top: 10px; }
+  .tip-box strong { font-weight: 800; }
+
+  .success-box { background: var(--green-light); border: 2px solid #6EE7B7; border-radius: 14px; padding: 12px 16px; font-size: 13px; color: var(--green-dark); font-weight: 600; line-height: 1.6; margin-top: 10px; }
+
+  .download-btn { display: inline-block; margin-top: 12px; padding: 10px 22px; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; text-decoration: none; color: #fff; box-shadow: 0 4px 0 rgba(0,0,0,0.2); transition: transform 0.15s, box-shadow 0.15s; }
+  .download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.2); }
+  .btn-blue { background: var(--blue); box-shadow: 0 4px 0 #1D4ED8; }
+  .btn-blue:hover { box-shadow: 0 6px 0 #1D4ED8; }
+  .btn-yellow { background: var(--yellow); box-shadow: 0 4px 0 #A16207; }
+  .btn-yellow:hover { box-shadow: 0 6px 0 #A16207; }
+
+  .code-inline { font-family: 'Courier New', monospace; font-size: 12px; background: #EDE9FE; color: var(--purple); padding: 2px 7px; border-radius: 6px; font-weight: 700; }
+
+  .checklist { list-style: none; padding: 0; margin-top: 10px; }
+  .checklist li { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 14px; font-weight: 700; color: #374151; border-bottom: 1.5px dashed #E5E7EB; }
+  .checklist li:last-child { border-bottom: none; }
+  .check-icon { font-size: 18px; }
+</style>
+
+<a class="back-link" href="index.html">← Back to Coding Camp</a>
+
+<div class="page-header">
+  <h1>🚀 Start Here!</h1>
+  <p>Set up your computer before the first session — it only takes a few minutes!</p>
+</div>
+
+<!-- Step 1: Install Python -->
+<div class="step-card">
+  <div class="step-badge" style="background:#DBEAFE;color:#1D4ED8">🐍 Step 1</div>
+  <p class="step-title">Install Python</p>
+  <p class="step-desc">Python is the programming language we'll be using. You need to install it so your computer understands the code you write.</p>
+
+  <ol class="instruction-list">
+    <li><span class="step-num">1</span><span>Click the download button below — it takes you to the official Python website.</span></li>
+    <li><span class="step-num">2</span><span>Click the big yellow <strong>"Download Python"</strong> button on that page.</span></li>
+    <li><span class="step-num">3</span><span>Open the file that downloads (it ends in <code class="code-inline">.exe</code> on Windows or <code class="code-inline">.pkg</code> on Mac).</span></li>
+    <li><span class="step-num">4</span><span>⚠️ <strong>Important on Windows:</strong> before clicking Install, tick the box that says <strong>"Add Python to PATH"</strong> at the bottom of the screen!</span></li>
+    <li><span class="step-num">5</span><span>Click <strong>Install Now</strong> and wait for it to finish.</span></li>
+  </ol>
+
+  <a class="download-btn btn-yellow" href="https://www.python.org/downloads/" target="_blank" rel="noopener">⬇️ Download Python</a>
+
+  <div class="tip-box" style="margin-top:14px;">
+    <strong>💡 How to check it worked:</strong> Open a terminal (search "Terminal" on Mac or "Command Prompt" on Windows) and type <code class="code-inline">python --version</code> then press Enter. You should see something like <code class="code-inline">Python 3.x.x</code>.
+  </div>
+</div>
+
+<!-- Step 2: Install VS Code -->
+<div class="step-card">
+  <div class="step-badge" style="background:#EDE9FE;color:#7C3AED">💻 Step 2</div>
+  <p class="step-title">Install VS Code</p>
+  <p class="step-desc">VS Code (Visual Studio Code) is where you'll write your code. Think of it as a really smart notepad made just for programmers — it highlights your code in colours, spots mistakes, and makes everything easier to read.</p>
+
+  <ol class="instruction-list">
+    <li><span class="step-num">1</span><span>Click the download button below.</span></li>
+    <li><span class="step-num">2</span><span>The website will detect your operating system automatically — click the big blue download button.</span></li>
+    <li><span class="step-num">3</span><span>Open the downloaded file and follow the installer steps. The default options are all fine — just keep clicking <strong>Next</strong>.</span></li>
+    <li><span class="step-num">4</span><span>Once installed, open VS Code. You should see a welcome screen.</span></li>
+  </ol>
+
+  <a class="download-btn btn-blue" href="https://code.visualstudio.com/" target="_blank" rel="noopener">⬇️ Download VS Code</a>
+</div>
+
+<!-- Step 3: Install Python extension -->
+<div class="step-card">
+  <div class="step-badge" style="background:#D4F5E5;color:#0A6644">🧩 Step 3</div>
+  <p class="step-title">Add the Python Extension to VS Code</p>
+  <p class="step-desc">VS Code works with add-ons called extensions. The Python extension adds colour-coding and other helpful tools for Python.</p>
+
+  <ol class="instruction-list">
+    <li><span class="step-num">1</span><span>Open VS Code.</span></li>
+    <li><span class="step-num">2</span><span>Click the <strong>Extensions</strong> icon on the left sidebar — it looks like four squares 🧩.</span></li>
+    <li><span class="step-num">3</span><span>In the search bar at the top, type <code class="code-inline">Python</code>.</span></li>
+    <li><span class="step-num">4</span><span>Click the one made by <strong>Microsoft</strong> (it should be the first result).</span></li>
+    <li><span class="step-num">5</span><span>Click the blue <strong>Install</strong> button.</span></li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Tip:</strong> You only need to do this once — the extension stays installed forever.
+  </div>
+</div>
+
+<!-- Step 4: Test it -->
+<div class="step-card">
+  <div class="step-badge" style="background:#FCE7F3;color:#EC4899">✅ Step 4</div>
+  <p class="step-title">Test That Everything Works</p>
+  <p class="step-desc">Let's make sure Python and VS Code are talking to each other properly.</p>
+
+  <ol class="instruction-list">
+    <li><span class="step-num">1</span><span>In VS Code, click <strong>File → New File</strong>, then save it as <code class="code-inline">test.py</code> (the <code class="code-inline">.py</code> ending tells VS Code it's a Python file).</span></li>
+    <li><span class="step-num">2</span><span>Type this into the file: <code class="code-inline">print("Hello, world!")</code></span></li>
+    <li><span class="step-num">3</span><span>Click the <strong>▶ Run</strong> button (top right corner) or press <code class="code-inline">Ctrl + F5</code> (Windows) / <code class="code-inline">Cmd + F5</code> (Mac).</span></li>
+    <li><span class="step-num">4</span><span>A panel should appear at the bottom showing: <code class="code-inline">Hello, world!</code></span></li>
+  </ol>
+
+  <div class="success-box">
+    🎉 <strong>If you see "Hello, world!" — you're all set!</strong> Your computer is ready for the first session. See you there!
+  </div>
+</div>
+
+<!-- All done checklist -->
+<div class="step-card">
+  <div class="step-badge" style="background:#FFF0E5;color:#F97316">📋 Quick Checklist</div>
+  <p class="step-title">Before Session 1, make sure you have:</p>
+  <ul class="checklist">
+    <li><span class="check-icon">🐍</span> Python installed</li>
+    <li><span class="check-icon">💻</span> VS Code installed</li>
+    <li><span class="check-icon">🧩</span> Python extension added to VS Code</li>
+    <li><span class="check-icon">✅</span> Ran <code class="code-inline">print("Hello, world!")</code> successfully</li>
+  </ul>
+
+  <div class="tip-box" style="margin-top:14px;">
+    <strong>🙋 Stuck?</strong> Don't worry — bring your laptop to the first session and we'll sort it out together!
+  </div>
+</div>
