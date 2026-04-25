@@ -1,38 +1,88 @@
 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
-  :root { --accent: #1D9E75; --accent-light: #E1F5EE; --accent-dark: #085041; }
+  :root {
+    --green: #1DB97A; --green-light: #D4F5E5; --green-dark: #0A6644;
+    --purple: #7C3AED; --purple-light: #EDE9FE;
+    --pink: #EC4899; --pink-light: #FCE7F3;
+    --orange: #F97316; --orange-light: #FFF0E5;
+    --blue: #3B82F6; --blue-light: #DBEAFE;
+    --yellow: #EAB308; --yellow-light: #FEF9C3;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-sans); }
-  .container { max-width: 680px; padding: 1.5rem 0; }
-  h1 { font-size: 28px; font-weight: 700; color: #085041; margin-bottom: 6px; letter-spacing: -0.01em; }
-  .subtitle { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
-  .week-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
-  .tab { padding: 8px 16px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); font-size: 13px; font-weight: 500; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all 0.15s; }
-  .tab:hover { background: var(--color-background-secondary); }
-  .tab.active { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
+  body { font-family: 'Nunito', sans-serif; background: #F0FDF8; }
+  .page-layout { display: flex; gap: 2rem; align-items: flex-start; padding: 1.5rem 0; }
+  .container { flex: 1; min-width: 0; max-width: 720px; padding: 0; }
+
+  /* Header */
+  h1 { font-family: 'Fredoka One', cursive; font-size: 42px; background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+  .subtitle { font-size: 15px; color: #555; margin-bottom: 1.5rem; font-weight: 600; }
+
+  /* Tabs */
+  .week-tabs { display: flex; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab { padding: 10px 20px; border-radius: 50px; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; transition: all 0.2s; box-shadow: 0 3px 0 rgba(0,0,0,0.15); }
+  .tab:nth-child(1) { background: #EDE9FE; color: var(--purple); }
+  .tab:nth-child(2) { background: #FCE7F3; color: var(--pink); }
+  .tab:nth-child(3) { background: #FFF0E5; color: var(--orange); }
+  .tab:nth-child(4) { background: #DBEAFE; color: var(--blue); }
+  .tab:nth-child(1).active { background: var(--purple); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 0 #5B21B6; }
+  .tab:nth-child(2).active { background: var(--pink); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 0 #BE185D; }
+  .tab:nth-child(3).active { background: var(--orange); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 0 #C2410C; }
+  .tab:nth-child(4).active { background: var(--blue); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 0 #1D4ED8; }
+  .tab:hover { transform: translateY(-2px); }
+
+  /* Panels */
   .week-panel { display: none; }
   .week-panel.active { display: block; }
-  .section { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-  .section-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
-  .week-heading { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
-  .week-desc { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1rem; }
-  .topic-pill { display: inline-block; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 4px 10px; font-size: 12px; color: var(--color-text-secondary); margin: 2px; }
-  .problem { border-left: 3px solid #5DCAA5; padding: 0.75rem 1rem; margin-bottom: 1rem; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
-  .problem-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
-  .problem-text { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px; line-height: 1.6; }
-  .solution-btn { font-size: 12px; padding: 4px 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); }
-  .solution-btn:hover { background: var(--color-background-secondary); }
-  .solution { display: none; margin-top: 10px; }
+
+  /* Sections */
+  .section { background: #fff; border: 2px solid #E5E7EB; border-radius: 20px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .section-title { font-size: 12px; font-weight: 800; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .week-heading { font-family: 'Fredoka One', cursive; font-size: 22px; color: #1F2937; margin-bottom: 6px; }
+  .week-desc { font-size: 14px; color: #6B7280; margin-bottom: 1rem; line-height: 1.6; }
+
+  /* Topic pills — cycling colors */
+  .topic-pill { display: inline-block; border-radius: 50px; padding: 5px 13px; font-size: 12px; font-weight: 700; margin: 3px; }
+  .topic-pill:nth-child(5n+1) { background: var(--purple-light); color: var(--purple); }
+  .topic-pill:nth-child(5n+2) { background: var(--pink-light); color: var(--pink); }
+  .topic-pill:nth-child(5n+3) { background: var(--orange-light); color: var(--orange); }
+  .topic-pill:nth-child(5n+4) { background: var(--blue-light); color: var(--blue); }
+  .topic-pill:nth-child(5n+5) { background: var(--yellow-light); color: var(--yellow); }
+
+  /* Problems */
+  .problem { border-left: 5px solid var(--green); padding: 1rem 1.25rem; margin-bottom: 1rem; background: var(--green-light); border-radius: 0 16px 16px 0; }
+  .problem-title { font-size: 15px; font-weight: 800; color: var(--green-dark); margin-bottom: 5px; }
+  .problem-text { font-size: 13px; color: #374151; margin-bottom: 10px; line-height: 1.7; }
+  .solution-btn { font-size: 13px; font-weight: 700; font-family: 'Nunito', sans-serif; padding: 6px 16px; border-radius: 50px; border: none; cursor: pointer; background: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-dark); transition: all 0.15s; }
+  .solution-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--green-dark); }
+  .solution-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--green-dark); }
+  .solution { display: none; margin-top: 12px; }
   .solution.open { display: block; }
-  pre { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 12px; font-family: var(--font-mono); font-size: 12px; color: var(--color-text-primary); line-height: 1.7; overflow-x: auto; white-space: pre; }
-  .concept-row { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+
+  /* Code blocks */
+  pre { background: #1E1B4B; border-radius: 14px; padding: 14px; font-family: 'Courier New', monospace; font-size: 13px; color: #C4B5FD; line-height: 1.8; overflow-x: auto; white-space: pre; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background: #EDE9FE; color: var(--purple); padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+
+  /* Concept rows */
+  .concept-row { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1.5px dashed #E5E7EB; }
   .concept-row:last-child { border-bottom: none; }
-  .concept-label { font-size: 13px; font-weight: 500; color: var(--color-text-primary); min-width: 120px; }
-  .concept-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
-  code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; }
+  .concept-label { font-size: 13px; font-weight: 800; color: var(--purple); min-width: 130px; background: var(--purple-light); padding: 3px 10px; border-radius: 8px; }
+  .concept-desc { font-size: 13px; color: #374151; line-height: 1.6; }
+
+  /* Sidebar */
+  .sidebar { width: 240px; flex-shrink: 0; position: sticky; top: 1.5rem; }
+  .sidebar-section { background: #fff; border: 2px solid #E5E7EB; border-radius: 20px; padding: 1.1rem; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .sidebar-title { font-size: 12px; font-weight: 800; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .ref-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1.5px dashed #E5E7EB; }
+  .ref-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ref-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .ref-link { font-size: 13px; font-weight: 700; color: var(--purple); text-decoration: none; line-height: 1.4; }
+  .ref-link:hover { text-decoration: underline; }
+  .ref-desc { font-size: 11px; color: #9CA3AF; margin-top: 2px; font-weight: 600; }
 </style>
 
-<img src="image.jpeg" alt="" style="width: 200px; display: block;">
+<img src="image.jpeg" alt="" style="width: 200px; display: block; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); margin-bottom: 1rem;">
+<div class="page-layout">
 <div class="container">
   <h2 class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">Python high school curriculum — 4 weekends</h2>
 
@@ -411,6 +461,31 @@ else:
       </div>
     </div>
   </div>
+
+</div>
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <p class="sidebar-title">References &amp; Materials</p>
+
+      <div class="ref-item">
+        <span class="ref-icon">▶️</span>
+        <div>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank" rel="noopener">Computer Science</a>
+          <p class="ref-desc">Crash Course Computer Science </p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-icon">▶️</span>
+        <div>
+          <a class="ref-link" href="https://www.youtube.com/watch?v=Rxoppbm-y8k&list=PLNIdDxctsZe9gVqjHHj_TxzHfElHszdst&index=1" target="_blank" rel="noopener">Scratch</a>
+          <p class="ref-desc">Learn to code in Scratch</p>
+        </div>
+      </div>
+
+    </div>
+  </aside>
 
 </div>
 
