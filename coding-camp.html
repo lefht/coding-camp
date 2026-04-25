@@ -1,0 +1,427 @@
+
+<style>
+  :root { --accent: #1D9E75; --accent-light: #E1F5EE; --accent-dark: #085041; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .container { max-width: 680px; padding: 1.5rem 0; }
+  h1 { font-size: 28px; font-weight: 700; color: #085041; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+  .week-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab { padding: 8px 16px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); font-size: 13px; font-weight: 500; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all 0.15s; }
+  .tab:hover { background: var(--color-background-secondary); }
+  .tab.active { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
+  .week-panel { display: none; }
+  .week-panel.active { display: block; }
+  .section { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
+  .section-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .week-heading { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .week-desc { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 1rem; }
+  .topic-pill { display: inline-block; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 4px 10px; font-size: 12px; color: var(--color-text-secondary); margin: 2px; }
+  .problem { border-left: 3px solid #5DCAA5; padding: 0.75rem 1rem; margin-bottom: 1rem; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+  .problem-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .problem-text { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px; line-height: 1.6; }
+  .solution-btn { font-size: 12px; padding: 4px 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); }
+  .solution-btn:hover { background: var(--color-background-secondary); }
+  .solution { display: none; margin-top: 10px; }
+  .solution.open { display: block; }
+  pre { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 12px; font-family: var(--font-mono); font-size: 12px; color: var(--color-text-primary); line-height: 1.7; overflow-x: auto; white-space: pre; }
+  .concept-row { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .concept-row:last-child { border-bottom: none; }
+  .concept-label { font-size: 13px; font-weight: 500; color: var(--color-text-primary); min-width: 120px; }
+  .concept-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+  code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; }
+</style>
+
+<img src="image.jpeg" alt="" style="width: 200px; display: block;">
+<div class="container">
+  <h2 class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">Python high school curriculum — 4 weekends</h2>
+
+  <h1>🚀 Coding Camp ✨</h1>
+  <p class="subtitle">💻 4-session curriculum &nbsp;·&nbsp; 🌱 beginner-friendly &nbsp;·&nbsp; 🧩 problems + solutions included</p>
+
+  <div class="week-tabs">
+    <button class="tab active" onclick="switchTab(0)">Session 1</button>
+    <button class="tab" onclick="switchTab(1)">Session 2</button>
+    <button class="tab" onclick="switchTab(2)">Session 3</button>
+    <button class="tab" onclick="switchTab(3)">Session 4</button>
+  </div>
+
+  <!-- WEEKEND 1 -->
+  <div class="week-panel active" id="panel-0">
+    <div class="section">
+      <p class="week-heading">Session 1 — Getting started</p>
+      <p class="week-desc">Students set up Python, learn the basics, and write their first programs.</p>
+      <span class="topic-pill">print()</span>
+      <span class="topic-pill">variables</span>
+      <span class="topic-pill">data types</span>
+      <span class="topic-pill">input()</span>
+      <span class="topic-pill">if / else</span>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Core concepts</p>
+      <div class="concept-row"><span class="concept-label">print()</span><span class="concept-desc">Displays output to the screen. Example: <code>print("Hello!")</code></span></div>
+      <div class="concept-row"><span class="concept-label">Variables</span><span class="concept-desc">Store data. <code>name = "Alice"</code>, <code>age = 16</code>, <code>score = 9.5</code></span></div>
+      <div class="concept-row"><span class="concept-label">Data types</span><span class="concept-desc">Strings, integers, floats, booleans — the kinds of values Python knows about.</span></div>
+      <div class="concept-row"><span class="concept-label">input()</span><span class="concept-desc">Asks the user to type something. Always returns a string.</span></div>
+      <div class="concept-row"><span class="concept-label">if / elif / else</span><span class="concept-desc">Make decisions in code based on conditions.</span></div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Problems</p>
+
+      <div class="problem">
+        <p class="problem-title">Problem 1 — Hello, you!</p>
+        <p class="problem-text">Ask the user for their name, then print a greeting. Example output: <code>Hello, Maya!</code></p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>name = input("What is your name? ")
+print("Hello, " + name + "!")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 2 — Age checker</p>
+        <p class="problem-text">Ask the user for their age. Print "You can vote!" if they are 18 or older, otherwise print "Not old enough yet."</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>age = int(input("How old are you? "))
+if age >= 18:
+    print("You can vote!")
+else:
+    print("Not old enough yet.")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 3 — Simple calculator</p>
+        <p class="problem-text">Ask for two numbers, then print their sum, difference, product, and quotient.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>a = float(input("First number: "))
+b = float(input("Second number: "))
+print("Sum:", a + b)
+print("Difference:", a - b)
+print("Product:", a * b)
+if b != 0:
+    print("Quotient:", a / b)
+else:
+    print("Cannot divide by zero!")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 4 — Grade classifier</p>
+        <p class="problem-text">Ask for a score (0–100). Print "A" for 90+, "B" for 80+, "C" for 70+, "D" for 60+, or "F" otherwise.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>score = int(input("Enter score: "))
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKEND 2 -->
+  <div class="week-panel" id="panel-1">
+    <div class="section">
+      <p class="week-heading">Session 2 — Loops and lists</p>
+      <p class="week-desc">Students repeat actions with loops and work with collections of data.</p>
+      <span class="topic-pill">for loops</span>
+      <span class="topic-pill">while loops</span>
+      <span class="topic-pill">lists</span>
+      <span class="topic-pill">range()</span>
+      <span class="topic-pill">len()</span>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Core concepts</p>
+      <div class="concept-row"><span class="concept-label">for loop</span><span class="concept-desc">Repeats code for each item. <code>for i in range(5):</code> runs the block 5 times.</span></div>
+      <div class="concept-row"><span class="concept-label">while loop</span><span class="concept-desc">Keeps going as long as a condition is true. <code>while count &lt; 10:</code></span></div>
+      <div class="concept-row"><span class="concept-label">Lists</span><span class="concept-desc">A collection of items. <code>fruits = ["apple", "banana", "cherry"]</code></span></div>
+      <div class="concept-row"><span class="concept-label">range()</span><span class="concept-desc">Generates a sequence of numbers. <code>range(1, 6)</code> gives 1, 2, 3, 4, 5.</span></div>
+      <div class="concept-row"><span class="concept-label">append / len</span><span class="concept-desc">Add items with <code>.append()</code>, count items with <code>len()</code>.</span></div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Problems</p>
+
+      <div class="problem">
+        <p class="problem-title">Problem 1 — Count to N</p>
+        <p class="problem-text">Ask the user for a number N. Print every number from 1 to N.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>n = int(input("Enter a number: "))
+for i in range(1, n + 1):
+    print(i)</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 2 — Sum of a list</p>
+        <p class="problem-text">Create a list of 5 numbers. Use a loop to add them all up and print the total.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>numbers = [4, 7, 2, 9, 1]
+total = 0
+for num in numbers:
+    total = total + num
+print("Total:", total)</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 3 — Guessing game</p>
+        <p class="problem-text">Pick a secret number (e.g. 7). Use a while loop to keep asking the user to guess until they get it right. Tell them if each guess is too high or too low.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>secret = 7
+guess = 0
+while guess != secret:
+    guess = int(input("Guess the number: "))
+    if guess < secret:
+        print("Too low!")
+    elif guess > secret:
+        print("Too high!")
+print("Correct! The number was", secret)</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 4 — Shopping list</p>
+        <p class="problem-text">Let the user keep adding items to a list until they type "done". Then print all the items.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>shopping = []
+while True:
+    item = input("Add item (or 'done'): ")
+    if item == "done":
+        break
+    shopping.append(item)
+
+print("Your list:")
+for item in shopping:
+    print("-", item)</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKEND 3 -->
+  <div class="week-panel" id="panel-2">
+    <div class="section">
+      <p class="week-heading">Session 3 — Functions</p>
+      <p class="week-desc">Students learn to write reusable blocks of code that take inputs and return outputs.</p>
+      <span class="topic-pill">def</span>
+      <span class="topic-pill">parameters</span>
+      <span class="topic-pill">return</span>
+      <span class="topic-pill">scope</span>
+      <span class="topic-pill">built-ins</span>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Core concepts</p>
+      <div class="concept-row"><span class="concept-label">def</span><span class="concept-desc">Define a function: <code>def greet(name):</code> — give it a name and any inputs it needs.</span></div>
+      <div class="concept-row"><span class="concept-label">Parameters</span><span class="concept-desc">The variables a function receives. <code>def add(a, b):</code> has two parameters.</span></div>
+      <div class="concept-row"><span class="concept-label">return</span><span class="concept-desc">Sends a value back. <code>return a + b</code> gives the answer to whoever called the function.</span></div>
+      <div class="concept-row"><span class="concept-label">Scope</span><span class="concept-desc">Variables inside a function are local — they don't exist outside it.</span></div>
+      <div class="concept-row"><span class="concept-label">Built-ins</span><span class="concept-desc"><code>max()</code>, <code>min()</code>, <code>round()</code>, <code>abs()</code> — functions Python gives you for free.</span></div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Problems</p>
+
+      <div class="problem">
+        <p class="problem-title">Problem 1 — Greeting function</p>
+        <p class="problem-text">Write a function called <code>greet</code> that takes a name and prints "Hello, [name]!". Call it three times with different names.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Alice")
+greet("Bob")
+greet("Carlos")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 2 — Area calculator</p>
+        <p class="problem-text">Write a function <code>area</code> that takes width and height and returns the area of a rectangle. Test it with a few different sizes.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>def area(width, height):
+    return width * height
+
+print(area(4, 5))
+print(area(10, 3))
+print(area(7, 7))</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 3 — Is it even?</p>
+        <p class="problem-text">Write a function <code>is_even</code> that takes a number and returns <code>True</code> if it's even, <code>False</code> if not. Test it with several numbers.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>def is_even(number):
+    return number % 2 == 0
+
+print(is_even(4))
+print(is_even(7))
+print(is_even(0))</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 4 — Biggest of three</p>
+        <p class="problem-text">Write a function <code>biggest</code> that takes three numbers and returns the largest one. Do not use Python's built-in <code>max()</code>.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>def biggest(a, b, c):
+    result = a
+    if b > result:
+        result = b
+    if c > result:
+        result = c
+    return result
+
+print(biggest(3, 7, 5))
+print(biggest(10, 2, 8))</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKEND 4 -->
+  <div class="week-panel" id="panel-3">
+    <div class="section">
+      <p class="week-heading">Session 4 — Putting it all together</p>
+      <p class="week-desc">Students combine everything to build small, real programs. Introduction to dictionaries.</p>
+      <span class="topic-pill">dictionaries</span>
+      <span class="topic-pill">string methods</span>
+      <span class="topic-pill">mini projects</span>
+      <span class="topic-pill">review</span>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Core concepts</p>
+      <div class="concept-row"><span class="concept-label">Dictionaries</span><span class="concept-desc">Key-value pairs. <code>student = {"name": "Sam", "grade": 10}</code>. Access with <code>student["name"]</code>.</span></div>
+      <div class="concept-row"><span class="concept-label">String methods</span><span class="concept-desc"><code>.upper()</code>, <code>.lower()</code>, <code>.strip()</code>, <code>.replace()</code>, <code>.split()</code></span></div>
+      <div class="concept-row"><span class="concept-label">Combining skills</span><span class="concept-desc">Real programs use variables, loops, functions, and data structures together.</span></div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Problems</p>
+
+      <div class="problem">
+        <p class="problem-title">Problem 1 — Contact book</p>
+        <p class="problem-text">Create a dictionary of 3 friends with their phone numbers. Let the user type a name and print the matching phone number, or "Not found" if the name isn't there.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>contacts = {
+    "Alice": "555-1234",
+    "Bob": "555-5678",
+    "Carlos": "555-9012"
+}
+
+name = input("Enter a name: ")
+if name in contacts:
+    print("Phone:", contacts[name])
+else:
+    print("Not found.")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 2 — Word counter</p>
+        <p class="problem-text">Ask the user to type a sentence. Print how many words it contains and print the sentence in all uppercase.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>sentence = input("Type a sentence: ")
+words = sentence.split()
+print("Word count:", len(words))
+print("Uppercase:", sentence.upper())</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 3 — Mini quiz game</p>
+        <p class="problem-text">Write a quiz with 3 questions. Keep track of the score and print the final result at the end.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>score = 0
+
+answer = input("What is the capital of France? ").strip().lower()
+if answer == "paris":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! It's Paris.")
+
+answer = input("What is 7 x 8? ").strip()
+if answer == "56":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! It's 56.")
+
+answer = input("What language are we learning? ").strip().lower()
+if answer == "python":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! It's Python.")
+
+print("Your score:", score, "out of 3")</pre>
+        </div>
+      </div>
+
+      <div class="problem">
+        <p class="problem-title">Problem 4 — Final project: number stats</p>
+        <p class="problem-text">Let the user enter numbers one by one (stop when they type "done"). Then print the count, total, average, highest, and lowest number entered.</p>
+        <button class="solution-btn" onclick="toggleSolution(this)">Show solution ▾</button>
+        <div class="solution">
+<pre>numbers = []
+
+while True:
+    entry = input("Enter a number (or 'done'): ")
+    if entry == "done":
+        break
+    numbers.append(float(entry))
+
+if len(numbers) == 0:
+    print("No numbers entered.")
+else:
+    print("Count:", len(numbers))
+    print("Total:", sum(numbers))
+    print("Average:", sum(numbers) / len(numbers))
+    print("Highest:", max(numbers))
+    print("Lowest:", min(numbers))</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function switchTab(index) {
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === index));
+  document.querySelectorAll('.week-panel').forEach((p, i) => p.classList.toggle('active', i === index));
+}
+function toggleSolution(btn) {
+  const sol = btn.nextElementSibling;
+  const open = sol.classList.toggle('open');
+  btn.textContent = open ? 'Hide solution ▴' : 'Show solution ▾';
+}
+</script>
